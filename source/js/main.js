@@ -5,6 +5,7 @@
         $$ = d.querySelectorAll.bind(d),
         root = $('html'),
         gotop = $('#gotop'),
+        gobottom = $('#gobottom'),
         menu = $('#menu'),
         header = $('#header'),
         mask = $('#mask'),
@@ -16,7 +17,7 @@
         forEach = Array.prototype.forEach,
         even = ('ontouchstart' in w && /Mobile|Android|iOS|iPhone|iPad|iPod|Windows Phone|KFAPWI/i.test(navigator.userAgent)) ? 'touchstart' : 'click',
         isWX = /micromessenger/i.test(navigator.userAgent),
-        noop = function () { },
+        noop = function () {},
         offset = function (el) {
             var x = el.offsetLeft,
                 y = el.offsetTop;
@@ -32,7 +33,7 @@
                 y: y
             };
         },
-        rootScollTop = function() {
+        rootScollTop = function () {
             return d.documentElement.scrollTop || d.body.scrollTop;
         };
 
@@ -42,12 +43,35 @@
             var interval = arguments.length > 2 ? arguments[1] : Math.abs(top - end) / scrollSpeed;
 
             if (top && top > end) {
+                // console.log('top: ' + top + '; end: ' + end + '; interval: ' + interval);
                 w.scrollTo(0, Math.max(top - interval, 0));
                 animate(arguments.callee.bind(this, end, interval));
             } else if (end && top < end) {
+                // console.log('top: ' + top + '; end: ' + end + '; interval: ' + interval);
                 w.scrollTo(0, Math.min(top + interval, end));
                 animate(arguments.callee.bind(this, end, interval));
             } else {
+                // console.log('top: ' + top + '; end: ' + end + '; interval: ' + interval);
+                this.toc.actived(end);
+            }
+        },
+        goBottom: function (end) {
+            var top = rootScollTop();
+            var interval = arguments.length > 2 ? arguments[1] : Math.abs(top - end) / scrollSpeed;
+
+            if (top && top > end) {
+                // console.log('top > end !');
+                // console.log('top: ' + top + ';end: ' + end + '; interval: ' + interval);
+                w.scrollTo(0, Math.max(top - interval, 0));
+                animate(arguments.callee.bind(this, end, interval));
+            } else if (end && top < end - 1) {
+                // console.log('top < end !');
+                // console.log('top: ' + top + ';end: ' + end + '; interval: ' + interval);
+                w.scrollTo(0, Math.min(top + interval, end));
+                animate(arguments.callee.bind(this, end, interval));
+            } else {
+                // console.log('toc actived!');
+                // console.log('top: ' + top + ';end: ' + end + '; interval: ' + interval);
                 this.toc.actived(end);
             }
         },
@@ -56,6 +80,15 @@
                 gotop.classList.add('in');
             } else {
                 gotop.classList.remove('in');
+            }
+        },
+        toggleGoBottom: function (top) {
+            // if (top > w.innerHeight / 2) {
+            // if (top < d.body.scrollHeight - w.screen.height - w.innerHeight / 2) {
+            if (top < getScrollHeight(d) - getWindowHeight(d) - w.innerHeight / 2) {
+                gobottom.classList.add('in');
+            } else {
+                gobottom.classList.remove('in');
             }
         },
         toggleMenu: function (flag) {
@@ -119,7 +152,7 @@
             }
             var firstChild =
                 toc.querySelector('a[href="#' + titles[0].id + '"]')
-                    .nextElementSibling;
+                .nextElementSibling;
             if (firstChild) {
                 firstChild.classList.add('post-toc-expand');
                 firstChild.classList.remove('post-toc-shrink');
@@ -461,7 +494,7 @@
 
     var ignoreUnload = false;
     var $mailTarget = $('a[href^="mailto"]');
-    if($mailTarget) {
+    if ($mailTarget) {
         $mailTarget.addEventListener(even, function () {
             ignoreUnload = true;
         });
@@ -490,6 +523,17 @@
         animate(Blog.goTop.bind(Blog, 0));
     }, false);
 
+    gobottom.addEventListener(even, function () {
+        // console.log('gobottom event listener!')
+        if (d.getElementById("vcomments")) {
+            // animate(Blog.goBottom.bind(Blog, Math.min(d.body.scrollHeight - w.screen.height, d.getElementById("comments").offsetTop)));
+            animate(Blog.goBottom.bind(Blog, Math.min(getScrollHeight(d) - getWindowHeight(d), d.getElementById("vcomments").offsetTop)));
+        } else {
+            // animate(Blog.goBottom.bind(Blog, d.body.scrollHeight - w.screen.height));
+            animate(Blog.goBottom.bind(Blog, getScrollHeight(d) - getWindowHeight(d)));
+        }
+    }, false);
+
     menuToggle.addEventListener(even, function (e) {
         Blog.toggleMenu(true);
         e.preventDefault();
@@ -510,6 +554,7 @@
     d.addEventListener('scroll', function () {
         var top = rootScollTop();
         Blog.toggleGotop(top);
+        Blog.toggleGoBottom(top);
         Blog.fixedHeader(top);
         Blog.toc.fixed(top);
         Blog.toc.actived(top);
@@ -528,6 +573,10 @@
     Blog.$ = $;
     Blog.$$ = $$;
 
+    var initTop = rootScollTop();
+    Blog.toggleGotop(initTop);
+    Blog.toggleGoBottom(initTop);
+
     Object.keys(Blog).reduce(function (g, e) {
         g[e] = Blog[e];
         return g
@@ -541,3 +590,31 @@
         console.error('Waves loading failed.')
     }
 })(window, document);
+
+//文档的总高度
+
+function getScrollHeight(document) {
+    var scrollHeight = 0,
+        bodyScrollHeight = 0,
+        documentScrollHeight = 0;
+    if (document.body) {
+        bodyScrollHeight = document.body.scrollHeight;
+    }
+    if (document.documentElement) {
+        documentScrollHeight = document.documentElement.scrollHeight;
+    }
+    scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight;
+    return scrollHeight;
+}
+
+//浏览器视口的高度
+
+function getWindowHeight(document) {
+    var windowHeight = 0;
+    if (document.compatMode == "CSS1Compat") {
+        windowHeight = document.documentElement.clientHeight;
+    } else {
+        windowHeight = document.body.clientHeight;
+    }
+    return windowHeight;
+}

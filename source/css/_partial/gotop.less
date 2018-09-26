@@ -1,11 +1,15 @@
 #gotop {
     position: fixed;
-    right: 16px;
-    bottom: 30px;
+    right: 14px;
+    // bottom: 30px;
+    bottom: 69px;
     z-index: 30;
-    width: 56px;
-    height: 56px;
-    line-height: 56px;
+    // width: 56px;
+    // height: 56px;
+    // line-height: 56px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
     text-align: center;
     color: #fff;
     background: @accentColor;
@@ -23,9 +27,41 @@
 
 @media screen and (max-width:760px) {
     #gotop {
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+    }
+
+}
+
+#gobottom {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    z-index: 30;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #fff;
+    background: @accentColor;
+    border-radius: 50%;
+    opacity: 0;
+    .boxShadow();
+    .transform(translateX(200%));
+
+    &.in {
+        opacity: 1;
+        .transform(none);
+    }
+
+}
+
+@media screen and (max-width:760px) {
+    #gobottom {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
     }
 
 }

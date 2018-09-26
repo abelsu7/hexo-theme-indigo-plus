@@ -1,8 +1,13 @@
 <% if (theme.valine.enable ){ %>
     <!-- Valine Comments -->
-    <div class="comments vcomment" id="comments"></div>
+    <div class="comments vcomment v" id="vcomments"></div>
+    <!-- <div class="comment" id="comment"></div> -->
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
     <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- <script src="//t1.aixinxi.net/o_1c3n4pim01nl3jg91b6l1kjtkvsa.js"></script> -->
+    <!-- <script src="/js/Valine.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cat.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <!-- Valine Comments script -->
     <script>
         var GUEST_INFO = ['nick','mail','link'];
@@ -10,9 +15,17 @@
           return GUEST_INFO.indexOf(item) > -1
         });
         new Valine({
-            el: '#comments',
-            notify: '<%= theme.valine.notify %>' == 'true',
-            verify: '<%= theme.valine.verify %>' == 'true',
+            av: AV,
+            // el: '#comments',
+            el: '#vcomments',
+            emoticon_url: 'https://abelsu7.top/alu', //表情图片网址
+            emoticon_list: ["赞一个.png","坐等.png","长草.png","阴暗.png","邪恶.png","小眼睛.png","想一想.png","献黄瓜.png","献花.png","喜极而泣.png","无语.png","无所谓.png","无奈.png","投降.png","深思.png","期待.png","狂汗.png","蜡烛.png","看不见.png","惊喜.png","击掌.png","欢呼.png","得意.png","不出所料.png","观察.png"],//表情图片文件名
+            // notify: '<%= theme.valine.notify %>' == 'false',
+            // verify: '<%= theme.valine.verify %>' == 'false',
+            // notify: '<%= theme.valine.notify %>',
+            // verify: '<%= theme.valine.verify %>',
+            notify: false,
+            verify: false,
             appId: "<%= theme.valine.appId %>",
             appKey: "<%= theme.valine.appKey %>",
             avatar: "<%= theme.valine.avatar %>",
