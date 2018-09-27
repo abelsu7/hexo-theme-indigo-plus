@@ -168,7 +168,7 @@ canonical: false
 since_year: 2018
 
 # 用户页面中作者相关的描述性文字，如不需要设为 false
-about: <b><font color="#3f51b5">CS在读</font></b>。云计算新兵，Linux爱好者。<p>公众号<b><font color="#ff4081">abelsu7-SCUT</font></b>同步更新</p>
+about: <b><font color="#3f51b5">CS在读</font></b>。云计算学徒，Linux爱好者。<p>公众号<b><font color="#ff4081">abelsu7-SCUT</font></b>同步更新</p>
 
 # “不蒜子”访问量统计，详见 http://ibruce.info/2015/04/04/busuanzi/
 visit_counter:
