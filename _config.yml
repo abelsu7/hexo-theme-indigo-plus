@@ -28,18 +28,17 @@ menu:
     url: /friends
   book:
     text: 读书
-    url: https://book.douban.com/people/abelsu7/
-    target: _blank
+    url: /books
   code:
     text: 学习
     url: /2018/09/21/how-to-learn-coding/
   sort-alpha-asc:
     text: 速查
     url: /wiki
-  wechat:
-    text: 微信
-    url: https://abelsu7.top/hover/index7.html
-    target: _blank
+  # wechat:
+  #   text: 微信
+  #   url: https://abelsu7.top/hover/index7.html
+  #   target: _blank
   info-circle:
     text: 关于
     url: /about
@@ -47,7 +46,7 @@ menu:
 # 你的头像url
 avatar: /img/fong.jpg
 # avatar link
-avatar_link: /
+avatar_link: https://github.com/abelsu7
 # 头像背景图
 brand: /img/back_blue.png
 # favicon
@@ -102,7 +101,7 @@ cnzz: false
 
 # 百度统计，如要开启，改为你的 key
 baidu_tongji: c61262c25ca5d4ed66df331a31b5bf49
-baidu_site_verification: oUZjWUiCek
+baidu_site_verification: HnoV7q61W5
 # 百度推送
 baidu_push: true
 
