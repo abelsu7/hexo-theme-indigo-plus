@@ -6,6 +6,9 @@
 * 修改打赏的切换按钮样式
 * 优化 Valine 在 hexo-theme-indigo 中的显示效果
 * 优化 hexo-douban 在 hexo-theme-indigo 中的显示效果
+
+> hexo-douban 同样做了相应修改，之后会补充说明
+
 * Change ul list-style and toc bottom padding
 * 更新 busuanzi CDN 地址
 * 敬请期待...
