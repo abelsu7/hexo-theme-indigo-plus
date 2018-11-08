@@ -33,6 +33,10 @@
                 <%- config.subtitle %>
             <% } else if (page.layout === 'page' && page.description) {%>
                 <%- page.description %>
+            <% } else if (path === '/books/') {%>
+                <%- config.subtitle %>
+            <% } else {%>
+                共计 <%- site.posts.length %> 篇文章，继续努力
             <% } %>
         </h5>
     </div>

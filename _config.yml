@@ -14,21 +14,36 @@ menu:
   archives:
     text: 归档
     url: /archives
-  tags:
-    text: 标签
-    url: /tags
   th-list:
     text: 分类
     url: /categories
-  bookmark:
-    text: 收藏
-    url: /bookmarks
+  tags:
+    text: 标签
+    url: /tags
+  sticky-note:
+    text: 笔记
+    url: https://notes.abelsu7.top
+  github:
+    text: 代码
+    url: https://github.com/abelsu7
   user:
     text: 友链
     url: /friends
+  bookmark:
+    text: 收藏
+    url: /bookmarks
   book:
     text: 读书
     url: /books
+  film:
+    text: 影视
+    url: /movies
+  gamepad:
+    text: 游戏
+    url: /games
+  wechat:
+    text: 微信
+    url: /2018/09/21/how-to-learn-coding/#4-4-微信公众号
   code:
     text: 学习
     url: /2018/09/21/how-to-learn-coding/
@@ -46,7 +61,7 @@ menu:
 # 你的头像url
 avatar: /img/fong.jpg
 # avatar link
-avatar_link: https://github.com/abelsu7
+avatar_link: /
 # 头像背景图
 brand: /img/back_blue.png
 # favicon
@@ -67,7 +82,7 @@ categories_title: Categories
 excerpt_render: true
 excerpt_length: 200
 excerpt_link: 阅读全文...
-mathjax: false
+mathjax: true
 archive_yearly: true
 
 # 是否显示文章最后更新时间
