@@ -203,3 +203,7 @@ lightbox: true
 
 # icp备案号  ICP_license: 京ICP备1234556号-1
 ICP_license: 粤ICP备16068788号-2
+
+# Prism Theme, default/coy/okaidia/atom-dark/solarized-light/tomorrow-night
+prism:
+  theme: atom-dark
