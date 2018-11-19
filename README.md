@@ -6,6 +6,7 @@
 * 修改打赏的切换按钮样式
 * 优化 Valine 在 hexo-theme-indigo 中的显示效果
 * 优化 hexo-douban 在 hexo-theme-indigo 中的显示效果
+* 使用 prism.js 替换 highlight.js 实现代码高亮，并在 `_config.yml` 中添加代码主题配置项
 
 > hexo-douban 同样做了相应修改，之后会补充说明
 
