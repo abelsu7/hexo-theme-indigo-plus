@@ -3,6 +3,7 @@
 > 基于 [hexo-theme-indigo](https://github.com/yscoder/hexo-theme-indigo) 优化，更新中...
 
 * 添加直达评论悬浮按钮
+* 归档、分类、标签页面添加文章计数
 * 修改打赏的切换按钮样式
 * 优化 Valine 在 hexo-theme-indigo 中的显示效果
 * 优化 hexo-douban 在 hexo-theme-indigo 中的显示效果
