@@ -206,4 +206,4 @@ ICP_license: 粤ICP备16068788号-2
 
 # Prism Theme, default/coy/okaidia/atom-dark/solarized-light/tomorrow-night
 prism:
-  theme: atom-dark
+  theme: tomorrow-night
