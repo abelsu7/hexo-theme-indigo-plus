@@ -2,18 +2,19 @@
 
 > 基于 [hexo-theme-indigo](https://github.com/yscoder/hexo-theme-indigo) 优化，更新中...
 
-* 添加直达评论悬浮按钮
-* 归档、分类、标签页面添加文章计数
-* 修改打赏的切换按钮样式
-* 优化 Valine 在 hexo-theme-indigo 中的显示效果
-* 优化 hexo-douban 在 hexo-theme-indigo 中的显示效果
-* 使用 prism.js 替换 highlight.js 实现代码高亮，并在 `_config.yml` 中添加代码主题配置项
-* 可控制仅在单个 post 中引入 `MathJax.js`
+* 添加**直达评论悬浮按钮**
+* **归档、分类、标签页面**添加**文章计数**
+* 修改打赏的**切换按钮样式**
+* 优化 **Valine** 在 hexo-theme-indigo 中的**显示效果**
+* 优化 **hexo-douban** 在 hexo-theme-indigo 中的**显示效果**
+* 使用 **prism.js** 替换 highlight.js 实现**代码高亮**，并在`_config.yml`中添加代码主题配置项
+* 可控制**仅在单个 post 中引入**`MathJax.js`
 
 > hexo-douban 同样做了相应修改，之后会补充说明
 
 * Change ul list-style and toc bottom padding
 * 更新 busuanzi CDN 地址
+* `tags`及`categories`页面按照**字母顺序**排序
 * 敬请期待...
 
 
