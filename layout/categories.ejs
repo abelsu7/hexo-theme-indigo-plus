@@ -13,7 +13,19 @@
         <% }) %>
             </div>
         <% } else {
-            site.categories.each(function(cate){
+            var sort_categories = [];
+
+            site.categories.each(function(o) {
+                if(o.posts.length) {
+                    sort_categories.push(o)
+                }
+            })
+
+            sort_categories.sort(function (a, b) {
+                return a.name.localeCompare(b.name, "zh")
+            })
+
+            sort_categories.forEach(function(cate){
                 if(cate.length) {
             %>
 

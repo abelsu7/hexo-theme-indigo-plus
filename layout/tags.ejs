@@ -13,7 +13,19 @@
         <% }) %>
             </div>
         <% } else {
-            site.tags.each(function(tag){
+            var sort_tags = [];
+
+            site.tags.each(function(o) {
+                if(o.posts.length) {
+                    sort_tags.push(o)
+                }
+            })
+
+            sort_tags.sort(function (a, b) {
+                return a.name.localeCompare(b.name, "zh")
+            })
+
+            sort_tags.forEach(function(tag){
                 if(tag.length){
             %>
 
