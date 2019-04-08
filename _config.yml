@@ -1,9 +1,9 @@
-# hexo-theme-indigo
-# https://github.com/yscoder/hexo-theme-indigo
+# hexo-theme-indigo-plus
+# https://github.com/abelsu7/hexo-theme-indigo-plus
 
 # 添加新菜单项遵循以下规则
 # menu:
-#  link:               fontawesome图标，省略前缀，本主题前缀为 icon-，必须
+#  link:               Font Awesome 图标，省略前缀，本主题前缀为 icon-，必须
 #    text: About       菜单显示的文字，如果省略即默认与图标一致，首字母会转大写
 #    url: /about       链接，绝对或相对路径，必须。
 #    target: _blank    是否跳出，省略则在当前页面打开
