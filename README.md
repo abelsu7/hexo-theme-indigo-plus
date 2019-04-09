@@ -2,7 +2,7 @@
 
 > 基于 [hexo-theme-indigo](https://github.com/yscoder/hexo-theme-indigo) 优化，更新中...
 
-## Feature
+## New Feature
 
 * 添加**直达评论悬浮按钮**
 * **归档、分类、标签页面**添加**文章计数**
@@ -11,14 +11,12 @@
 * 优化 **hexo-douban** 在 hexo-theme-indigo 中的**显示效果**
 * 使用 **prism.js** 替换 highlight.js 实现**代码高亮**，并在`_config.yml`中添加代码主题配置项
 * 可控制**仅在单个 post 中引入**`MathJax.js`
-
-> hexo-douban 同样做了相应修改，之后会补充说明
-
 * Change ul list-style and toc bottom padding
 * 更新 busuanzi CDN 地址
 * `tags`及`categories`页面按照**字母顺序**排序
-* 文章置顶
-* 敬请期待...
+* 自定义文章置顶
+* 集成百度自动推送
+* 敬请期待
 
 ## 快速开始
 
@@ -122,6 +120,26 @@ npm install hexo-helper-qrcode --save
 npm install hexo-deployer-git --save
 ```
 
+使用`hexo g`生成`public`目录后，使用`hexo deploy`即可根据博客根目录下`_config.yml`中的配置部署博客。当有多个`deploy`及`repo`是，示例配置如下：
+
+```yaml
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+...
+...
+deploy:
+- type: git
+  repo:
+    github: git@github.com:abelsu7/blog.git,master
+    coding: git@git.coding.net:abelsu7/blog.git,coding-pages
+- type: baidu_url_submitter
+...
+...
+```
+
+> **注意**：若同时安装了`hexo-douban`插件，则无法使用`hexo d`这种缩写形式，而必须指明`hexo deploy`或`hexo douban`
+
+
 #### Kramed
 
 使用`hexo-renderer-kramed`替换默认的`hexo-renderer-marked`渲染引擎，否则使用`prism.js`高亮代码时会出现问题：
@@ -131,9 +149,97 @@ npm uninstall hexo-renderer-marked --save
 npm install hexo-renderer-kramed --save
 ```
 
-#### Douban
+#### Asset（可选）
 
-首先安装`hexo-douban`：
+使用 [hexo-asset-image](https://github.com/dangxuandev/hexo-asset-image) 自动生成文章对应的同名**图片 asset 目录**。
+
+首先在**博客根目录**下的`_config.yml`中，将`post_asset_folder`设置为`true`：
+
+```yaml
+...
+...
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: true # 修改这里为 true
+relative_link: false
+future: true
+highlight:
+  enable: false
+  # line_number: true
+  # auto_detect: false
+  # tab_replace:
+...
+...
+```
+
+之后在**博客根目录**下安装`hexo-asset-image`：
+
+```js
+npm install hexo-asset-image --save
+```
+
+例如使用以下命令新建`post`文章：
+
+```bash
+hexo new post MacGesture2-Publish
+```
+
+就会在`source/_posts/`目录下生成同名的图片 asset 目录：
+
+```bash
+MacGesture2-Publish
+├── apppicker.jpg
+├── logo.jpg
+└── rules.jpg
+MacGesture2-Publish.md
+```
+
+只需要文章中使用`![logo](logo.jpg)`，即可引用图片。
+
+
+#### Recommend（可选）
+
+使用 [hexo-recommended-posts](https://github.com/huiwang/hexo-recommended-posts) 生成**相关文章推荐列表**。
+
+首先在**博客根目录**下安装插件：
+
+```js
+npm install hexo-recommended-posts --save
+```
+
+之后在**博客根目录**下的`_config.yml`中添加以下内容以**覆盖默认配置**：
+
+```yaml
+# Hexo recommended posts
+recommended_posts:
+  server: https://api.truelaurel.com #后端推荐服务器地址
+  timeoutInMillis: 15000 #服务时长，超过此时长，则使用离线推荐模式
+  internalLinks: 3 #内部文章数量
+  externalLinks: 2 #外部文章数量
+  fixedNumber: false
+  autoDisplay: true #自动在文章底部显示推荐文章
+  excludePattern: [],
+  titleHtml: <strong>🚩推荐阅读</strong>（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动） #自定义标题
+```
+
+> 具体参数设置参见 [hexo-recommended-posts](https://github.com/huiwang/hexo-recommended-posts) 文档
+
+只需在`hexo g`命令前，在**博客根目录**使用以下命令**获取推荐文章列表**，存放于`source\_data\recommended_posts.json`中：
+
+```bash
+hexo recommend
+```
+
+#### Douban（可选）
+
+使用 [hexo-douban](https://github.com/mythsman/hexo-douban) 生成**豆瓣电影、读书、游戏**展示页面。
+
+首先在**博客根目录**下安装插件：
 
 ```bash
 npm install hexo-douban --save
@@ -439,6 +545,43 @@ douban:
 };
 ```
 
+#### Baidu URL Submit（可选）
+
+使用 [hexo-baidu-url-submit](https://github.com/huiwang/hexo-baidu-url-submit) 将**博客新链接**主动推送至**百度搜索引擎**。
+
+首先在**博客根目录**下安装插件：
+
+```js
+npm install hexo-baidu-url-submit --save
+```
+
+之后在博客根目录下的`_config.yml`中进行配置：
+
+```yaml
+...
+...
+# Baidu URL Submit
+baidu_url_submit:
+  count: 1000 ## 提交最新的一个链接
+  host: alili.tech ## 在百度站长平台中注册的域名
+  token: xxxxx ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
+...
+...
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+- type: git
+  repo:
+    github: git@github.com:abelsu7/blog.git,master
+    coding: git@git.coding.net:abelsu7/blog.git,coding-pages
+- type: baidu_url_submitter
+...
+...
+```
+
+
+
 ### 5. 修改 scaffolds
 
 初始化 Hexo 博客后，默认会在`scaffolds`目录下创建`draft.md`、`page.md`、`post.md`三个模板文件，使用`hexo new`命令新建页面时就会基于上述模板文件生成对应的 Markdown 文件。为了方便使用，建议将`scaffolds`下的模板文件修改如下：
@@ -578,6 +721,25 @@ hexo new page categories
 layout: categories
 comments: false
 ---
+```
+
+### 10. 开启关于页
+
+```bash
+hexo new page about
+```
+
+关于`page`页面的语法规则，具体参见 [hexo-theme-indigo](https://github.com/yscoder/hexo-theme-indigo) 文档。
+
+### 11. 使用示例
+
+```bash
+hexo clean     # 清除 public 目录下的静态文件
+hexo recommend # 获取推荐文章列表
+hexo douban    # 生成豆瓣展示页面
+hexo g         # 生成 public 目录下的静态文件
+hexo s         # 本地启动 server
+hexo deploy    # 部署博客至远程仓库
 ```
 
 
