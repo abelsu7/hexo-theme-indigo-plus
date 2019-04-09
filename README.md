@@ -355,7 +355,7 @@ douban:
 .hexo-douban-tabs {
     margin-bottom: 15px;
     margin-top: 15px;
-    text-align: center; /* 新增  */
+    text-align: center; /* 新增 */
 }
 
 .hexo-douban-tab {
