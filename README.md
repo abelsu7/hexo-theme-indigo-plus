@@ -508,7 +508,7 @@ index_generator:
 
 即可在首页先根据`top`值、再根据`date`，对所有文章进行排序。所有文章默认`top: 1`，如需置顶文章，只需将其`top`值修改为大于 1 的整数，同一`top`值可有多篇文章，`top`值相同时按照`date`排序。
 
-> 注意：需要确保所有的`post`都有`top`和`date`属性，否则会导致排序失败。可在每次新建文章时使用`hexo new post 'title'`创建，即可根据`post.md`模板生成对应的文章文件
+> 注意：需要确保所有的`post`都有`top`和`date`属性，否则会导致排序失败。可在每次新建文章时使用`hexo new post <post_title>`创建，即可根据`post.md`模板生成对应的文章文件
 
 ### 7. 按需开启 MathJax
 

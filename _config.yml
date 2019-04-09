@@ -124,7 +124,7 @@ gitment: false
 #   client_id:
 #   client_secret:
 
-# use gitalk://github.com/gitalk/gitalk
+# 是否使用 Gitalk，https://github.com/gitalk/gitalk
 gitalk: false
 #  owner: 
 #  repo: 
