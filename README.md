@@ -2,6 +2,30 @@
 
 > 基于 [hexo-theme-indigo](https://github.com/yscoder/hexo-theme-indigo) 优化，更新中...
 
+- [New Feature](#new-feature)
+- [快速开始](#快速开始)
+  - [1. 安装 Hexo](#1-安装-hexo)
+  - [2. 设置语言并禁用 highlight.js](#2-设置语言并禁用-highlightjs)
+  - [3. 主题安装](#3-主题安装)
+  - [4. 依赖安装](#4-依赖安装)
+    - [Less](#less)
+    - [Feed](#feed)
+    - [JSON-Content](#json-content)
+    - [QR-Code](#qr-code)
+    - [Deploy](#deploy)
+    - [Kramed](#kramed)
+    - [Asset（可选）](#asset可选)
+    - [Recommend（可选）](#recommend可选)
+    - [Douban（可选）](#douban可选)
+    - [Baidu URL Submit（可选）](#baidu-url-submit可选)
+  - [5. 修改 scaffolds](#5-修改-scaffolds)
+  - [6. 文章置顶](#6-文章置顶)
+  - [7. 按需开启 MathJax](#7-按需开启-mathjax)
+  - [8. 开启标签页](#8-开启标签页)
+  - [9. 开启分类页](#9-开启分类页)
+  - [10. 开启关于页](#10-开启关于页)
+  - [11. 使用示例](#11-使用示例)
+
 ## New Feature
 
 * 添加**直达评论悬浮按钮**
@@ -14,8 +38,8 @@
 * Change ul list-style and toc bottom padding
 * 更新 busuanzi CDN 地址
 * `tags`及`categories`页面按照**字母顺序**排序
-* 自定义文章置顶
-* 集成百度自动推送
+* 自定义**文章置顶**
+* 集成**百度自动推送**
 * 敬请期待
 
 ## 快速开始
