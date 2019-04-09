@@ -104,7 +104,7 @@ theme: indigo-plus
 
 #### Less
 
-主题默认使用`less`作为`css`预处理工具：
+主题默认使用`less`作为`css`**预处理工具**：
 
 ```bash
 npm install hexo-renderer-less --save
@@ -130,7 +130,7 @@ npm install hexo-generator-json-content --save
 
 > **可选**，不安装时会请求`jiathis API`生成二维码
 
-用于生成微信分享二维码：
+用于生成**微信分享二维码**：
 
 ```bash
 npm install hexo-helper-qrcode --save
@@ -144,7 +144,7 @@ npm install hexo-helper-qrcode --save
 npm install hexo-deployer-git --save
 ```
 
-使用`hexo g`生成`public`目录后，使用`hexo deploy`即可根据博客根目录下`_config.yml`中的配置部署博客。当有多个`deploy`及`repo`是，示例配置如下：
+使用`hexo g`生成`public`目录后，使用`hexo deploy`即可根据博客根目录下`_config.yml`中的配置部署博客。当有多个`deploy`及`repo`时，示例配置如下：
 
 ```yaml
 # Deployment
