@@ -18,6 +18,7 @@
     - [Recommend（可选）](#recommend可选)
     - [Douban（可选）](#douban可选)
     - [Baidu URL Submit（可选）](#baidu-url-submit可选)
+    - [Sitemap（可选）](#sitemap可选)
   - [5. 修改 scaffolds](#5-修改-scaffolds)
   - [6. 文章置顶](#6-文章置顶)
   - [7. 按需开启 MathJax](#7-按需开启-mathjax)
