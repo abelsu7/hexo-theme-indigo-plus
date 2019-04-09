@@ -67,6 +67,7 @@ hexo server
 title: Keep Coding
 subtitle: 苏易北
 description: Abel Su的编程笔记
+keywords: KVM,Go,Docker,Kubernetes,Linux,虚拟化,云计算
 author: Abel Su
 language: zh-CN
 timezone:
