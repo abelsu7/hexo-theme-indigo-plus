@@ -1,6 +1,6 @@
 # hexo-theme-indigo-plus
 
-> 基于 [hexo-theme-indigo](https://github.com/yscoder/hexo-theme-indigo) 优化，更新中...
+> 基于 [hexo-theme-indigo](https://github.com/yscoder/hexo-theme-indigo) 主题进行优化，效果展示参见 [我的博客](https://abelsu7.top)
 
 - [New Feature](#new-feature)
 - [快速开始](#快速开始)
