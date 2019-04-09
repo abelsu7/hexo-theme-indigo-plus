@@ -605,6 +605,26 @@ deploy:
 ...
 ```
 
+#### Sitemap（可选）
+
+自动生成`sitemap.xml`以及`baidusitemap.xml`。
+
+首先在**博客根目录**安装插件：
+
+```js
+npm install hexo-generator-sitemap --save
+npm install hexo-generator-baidu-sitemap --save
+```
+
+之后在**博客根目录**下的`_config.yml`中**添加配置**：
+
+```yaml
+# 自动生成sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+```
 
 
 ### 5. 修改 scaffolds
