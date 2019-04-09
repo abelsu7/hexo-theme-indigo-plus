@@ -94,6 +94,9 @@ cnzz: false
 
 # 百度统计，如要开启，改为你的 key
 baidu_tongji: false
+baidu_site_verification: false
+# 百度自动推送，如要开启，设置为 true
+baidu_push: false
 
 # 腾讯分析，如要开启，输入站点id
 tajs: false
