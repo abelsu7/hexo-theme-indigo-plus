@@ -13,28 +13,28 @@ menu:
     url: /
   archives:
     text: 归档
-    url: /archives
+    url: /archives/
   th-list:
     text: 分类
-    url: /categories
+    url: /categories/
   tags:
     text: 标签
-    url: /tags
+    url: /tags/
   github:
     text: 代码
     url: https://github.com/abelsu7
   book:
     text: 读书
-    url: /books
+    url: /books/
   film:
     text: 影视
-    url: /movies
+    url: /movies/
   gamepad:
     text: 游戏
-    url: /games
+    url: /games/
   info-circle:
     text: 关于
-    url: /about
+    url: /about/
 
 # 你的头像url
 avatar: /img/fong.jpg
