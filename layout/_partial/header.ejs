@@ -33,10 +33,26 @@
                 <%- config.subtitle %>
             <% } else if (page.layout === 'page' && page.description) {%>
                 <%- page.description %>
-            <% } else if (path === '/books/') {%>
-                <%- config.subtitle %>
-            <% } else {%>
+            <% } else if (path === 'categories/index.html' || path === 'tags/index.html' || path === 'archives/index.html') {%>
                 共计 <%- site.posts.length %> 篇文章，继续努力
+            <% } else {%>
+                <% if(is_category()) { %>
+                    共计
+                    <% site.categories.forEach(function(category){ %>
+                        <% if (category.name == page.category) { %>
+                            <%- category.length %>
+                        <% } %>
+                    <% }) %> 
+                    篇文章，继续努力
+                <% } else if (is_tag()) { %>
+                    共计
+                    <% site.tags.forEach(function(tag){ %>
+                        <% if (tag.name == page.tag) { %>
+                            <%- tag.length %>
+                        <% } %>
+                    <% }) %> 
+                    篇文章，继续努力
+                <% } %>
             <% } %>
         </h5>
     </div>
