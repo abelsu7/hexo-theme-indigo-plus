@@ -31,6 +31,7 @@
 
 * 添加**直达评论悬浮按钮**
 * **归档、分类、标签页面**添加**文章计数**
+* **各个分类、标签**添加单独的**文章计数**
 * 修改打赏的**切换按钮样式**
 * 优化 **Valine** 在 hexo-theme-indigo 中的**显示效果**
 * 优化 **hexo-douban** 在 hexo-theme-indigo 中的**显示效果**
@@ -249,7 +250,7 @@ recommended_posts:
   externalLinks: 2 #外部文章数量
   fixedNumber: false
   autoDisplay: true #自动在文章底部显示推荐文章
-  excludePattern: [],
+  excludePattern: []
   titleHtml: <strong>🚩推荐阅读</strong>（由<a href="https://github.com/huiwang/hexo-recommended-posts">hexo文章推荐插件</a>驱动） #自定义标题
 ```
 
