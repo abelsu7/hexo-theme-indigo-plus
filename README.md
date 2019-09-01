@@ -206,8 +206,10 @@ highlight:
 
 之后在**博客根目录**下安装`hexo-asset-image`：
 
+> 注意：若安装最新版的`hexo-asset-image`，使用相对路径引用图片时貌似会出现图片路径错误的问题，参见 [hexo 引用本地图片无法显示 | Ericam_blog](https://850552586.github.io/2018/11/15/hexo引用本地图片无法显示/)
+
 ```js
-npm install hexo-asset-image --save
+npm install hexo-asset-image@0.0.3 --save
 ```
 
 例如使用以下命令新建`post`文章：
