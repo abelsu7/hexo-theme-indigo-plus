@@ -191,3 +191,7 @@ ICP_license: false
 # Prism Theme, default/coy/okaidia/atom-dark/solarized-light/tomorrow-night
 prism:
   theme: tomorrow-night
+
+# footer.ejs 中 Hosted by 后的链接
+host_link: https://pages.github.com
+host_name: Github Pages
